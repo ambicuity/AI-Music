@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Music Platform</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #ffd700;
+        }
+        
+        .service-card p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .api-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .api-link {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .api-link:hover {
+            background: rgba(255, 215, 0, 0.3);
+        }
+        
+        .features {
+            margin: 40px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #ffd700;
+        }
+        
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.7;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+            
+            .services {
+                grid-template-columns: 1fr;
+            }
+            
+            .api-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 AI Music Platform</h1>
+            <p class="subtitle">
+                Engineered and deployed AI-powered applications for music creation and exploration
+            </p>
+        </header>
+        
+        <div class="services">
+            <div class="service-card">
+                <h3>🎼 AI Music Composition</h3>
+                <p>
+                    Leverage simulated AI models to assist users in creating original music. 
+                    Generate compositions based on genre, tempo, key signature, and mood preferences.
+                </p>
+                <div class="api-links">
+                    <a href="/composition/api/" class="api-link">Composition API</a>
+                    <a href="/composition/api/genres/" class="api-link">Genres</a>
+                    <a href="/composition/api/compositions/" class="api-link">Compositions</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <h3>🎵 Music Streaming & Discovery</h3>
+                <p>
+                    Full-stack platform for music streaming with personalized recommendations. 
+                    Handles massive consumer traffic with SQL and NoSQL database integration.
+                </p>
+                <div class="api-links">
+                    <a href="/streaming/api/" class="api-link">Streaming API</a>
+                    <a href="/streaming/api/tracks/" class="api-link">Tracks</a>
+                    <a href="/streaming/api/playlists/" class="api-link">Playlists</a>
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <h3>📊 Real-time Audio Processing</h3>
+                <p>
+                    Process and visualize audio data in real-time using WebSocket connections. 
+                    Perform spectrum analysis, beat detection, and mood analysis.
+                </p>
+                <div class="api-links">
+                    <a href="/audio-processing/api/" class="api-link">Processing API</a>
+                    <a href="#" class="api-link" onclick="connectWebSocket()">WebSocket Demo</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h2>Platform Features</h2>
+            <div class="feature-list">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h4>High Performance</h4>
+                    <p>Designed to handle massive consumer traffic and data</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <h4>Scalable Architecture</h4>
+                    <p>Built with modern frameworks and scalable design patterns</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔍</div>
+                    <h4>Observable Systems</h4>
+                    <p>Comprehensive logging and monitoring capabilities</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h4>AI-Powered</h4>
+                    <p>Leverages artificial intelligence for music creation</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💾</div>
+                    <h4>Multi-Database</h4>
+                    <p>Utilizes both SQL and NoSQL databases for optimal performance</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h4>Real-time Processing</h4>
+                    <p>WebSocket-based real-time audio processing and visualization</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>
+                Built with Django REST Framework, React (frontend), and WebSocket technology<br>
+                Demonstrating modern web development practices and AI integration
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        function connectWebSocket() {
+            const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsUrl = `${protocol}//${window.location.host}/ws/audio/processing/`;
+            
+            const socket = new WebSocket(wsUrl);
+            
+            socket.onopen = function(event) {
+                console.log('WebSocket connected');
+                alert('WebSocket connection established! Check browser console for details.');
+                
+                // Send a test message
+                socket.send(JSON.stringify({
+                    type: 'start_session',
+                    session_id: 'demo-session-' + Date.now(),
+                    processing_type: 'spectrum'
+                }));
+            };
+            
+            socket.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                console.log('Received:', data);
+            };
+            
+            socket.onclose = function(event) {
+                console.log('WebSocket closed');
+            };
+            
+            socket.onerror = function(error) {
+                console.error('WebSocket error:', error);
+                alert('WebSocket connection failed. Make sure the server is running.');
+            };
+            
+            // Close connection after 10 seconds for demo
+            setTimeout(() => {
+                socket.close();
+                console.log('Demo WebSocket connection closed');
+            }, 10000);
+        }
+    </script>
+</body>
+</html>
