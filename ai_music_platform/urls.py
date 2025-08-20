@@ -26,6 +26,8 @@ def api_root(request):
     return JsonResponse({
         'message': 'Welcome to AI Music Platform API',
         'services': {
+            'authentication': '/auth/api/',
+            'ml_engine': '/ai/',
             'composition': '/composition/api/',
             'streaming': '/streaming/api/', 
             'audio_processing': '/audio-processing/api/'
@@ -40,6 +42,8 @@ def api_root(request):
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', api_root, name='api-root'),
+    path('auth/api/', include('authentication.urls')),
+    path('ai/', include('ml_engine.urls')),
     path('composition/', include('composition.urls')),
     path('streaming/', include('streaming.urls')),
     path('audio-processing/', include('audio_processing.urls')),
